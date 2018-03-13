@@ -1,0 +1,20 @@
+{% extends "two_columns.html" %}
+
+{% block title %}
+feedback &mdash; feedback
+{% endblock %}
+
+{% block main %}
+
+Mail your project information to : <a href="mailto:Miranda.zhu@hotmail.com">Miranda.zhu@hotmail.com</a>
+
+<hr />
+
+{% for review in reviews %}
+<h2>{{review.name}}</h2>
+<p>{{review.review}}</p>
+{% endfor %}
+
+<!--a href="https://www.facebook.com/miranda.zhu.14">FB reviews</a-->
+
+{% endblock %}

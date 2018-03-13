@@ -1,0 +1,27 @@
+{% extends "two_columns.html" %}
+
+{% block main %}
+
+<div class="entry">
+<h2>{{guide.name}}</h2>
+
+{% if guide.image %}
+<img src="{{guide.image.url}}" class="img-responsive alignleft" />
+{% endif %}
+
+<p>{{guide.about}}</p>
+{% if guide.facebook %}
+<p>testtestshowguide <a href="https://www.facebook.com/{{guide.facebook}}">Guide</a>.</p>
+{% endif %}
+<div style="clear:both;"></div>
+<h3>Project</h3>
+
+{% for event in guide.event_set.all %}
+<img src="{{event.image.url}}" width="150" class="alignleft"/>
+<a href="{% url 'show_project' event.permalink %}">{{event.name}}</a>
+<div style="clear:both;"></div>
+{% endfor %}
+
+</div>
+
+{% endblock %}
